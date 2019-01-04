@@ -1,0 +1,35 @@
+
+Variables I and lasterror must be created outside the loop. Probably need to be static too.
+kP, kI, kD, target, velTolerance, and posTolerance are constants (tune these).
+
+Loop through this:
+```
+	if (!done){
+		lasterror = error;
+		error = target - position;
+					
+		if (Math.abs(error) < 2) {
+			I = 0;
+		}
+		
+		P = kP * error;
+		I = kI * (I + error);
+		D = kD * (error - lasterror);
+					
+		acceleration = P + I + D;
+					
+		velocity = (velocity + acceleration) * efficiency;
+		position = position + velocity;
+		
+		if(Math.abs(velocity) < velTolerance && Math.abs(error) < posTolerance) {
+			done = true;
+		}
+	}
+```
+
+
+NOTES on tuning:
+from my trial and error I found that:
+	P makes it go faster when far away, so increase it if it is going slow at long distances.
+	I makes it go faster when it has been away from the target for a long time so increase it to go faster, decrease if oscillates.
+	D makes it slow down when it is getting close to the target. Increase if it is oscillating and decrease if it takes too long to get there.
