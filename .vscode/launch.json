@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PIDBsim",
+            "request": "launch",
+            "mainClass": "maybepid.PIDBsim",
+            "projectName": "maybepid"
+        }
+    ]
+}
