@@ -9,8 +9,8 @@ public class PIDBsim {
 	static double velocity = 0;
 	static double acceleration = 0;
 	
-	static double efficiency = 0.1;
-	static double statFric = 0.1;
+	static double efficiency = 0.9;
+	static double statFric = 0.01;
 	
 	static double target = 260;
 	
@@ -21,7 +21,7 @@ public class PIDBsim {
 
     public static void main(String[] args) {
 
-        pidb = new PIDB(0.07, 0.02, 0.0, 0.4, 1);
+        pidb = new PIDB(0.001, 0.0001, 0.1, 0.5, 1);
         Boolean done = false;
 
         while(!done) {

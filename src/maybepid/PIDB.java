@@ -43,7 +43,7 @@ public class PIDB {
         
         P = kP * error;
         I = I + (kI*error);
-        D = kD * (error - lastError) / error;
+        D = kD * (error - lastError);
 
         power = P + I + D;
         lastError = error;
