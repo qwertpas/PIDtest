@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - officialPIDsim",
+            "request": "launch",
+            "mainClass": "maybepid.officialPIDsim",
+            "projectName": "maybepid"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PIDBsim",
             "request": "launch",
             "mainClass": "maybepid.PIDBsim",
